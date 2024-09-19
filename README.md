@@ -2,6 +2,10 @@
 
 In this project, I've replicated a figma design to code using NextJS. The page features a sleek UI, pixel perfectly put from design to code!
 
+# 💻 DEMO
+
+[VERCEL](creative-landing-page-blond.vercel.app)
+
 ## 🚀 Features
 
 - Responsive designs
