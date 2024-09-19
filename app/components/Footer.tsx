@@ -37,7 +37,7 @@ const Footer = () => {
               <h4 className="text-gray-400 text-sm mb-4">INFORMATION</h4>
               <div className="grid grid-cols-2 gap-4">
                 <a href="#" className="text-gray-600 hover:text-gray-800">
-                  About Fapster app
+                  About Creative Media
                 </a>
                 <a href="#" className="text-gray-600 hover:text-gray-800">
                   Onhovered / Active
@@ -55,7 +55,7 @@ const Footer = () => {
                   Terms of Service
                 </a>
                 <a href="#" className="text-gray-600 hover:text-gray-800">
-                  We are hiring!
+                  Career
                 </a>
                 <a href="#" className="text-gray-600 hover:text-gray-800">
                   Resources
@@ -71,7 +71,7 @@ const Footer = () => {
               href="mailto:hello@fapsterapp.com"
               className="text-purple-600 text-xl font-semibold hover:underline"
             >
-              hello@fapsterapp.com
+              hello@creativemedia.com
             </a>
 
             <h4 className="text-gray-400 text-sm mt-8 mb-4">KEEP IN TOUCH</h4>
