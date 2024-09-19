@@ -4,7 +4,7 @@ In this project, I've replicated a figma design to code using NextJS. The page f
 
 # 💻 DEMO
 
-[VERCEL](creative-landing-page-blond.vercel.app)
+[VERCEL](https://creative-landing-page-blond.vercel.app)
 
 ## 🚀 Features
 
