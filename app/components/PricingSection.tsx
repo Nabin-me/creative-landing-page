@@ -1,247 +1,133 @@
 "use client";
 import React, { useState } from "react";
+import { CircleCheck } from "lucide-react";
+import { BackgroundSVG } from "./svg/backgrounds/BackgroundSVG";
+import { TickIcon } from "./svg/icons/TickIcon";
 
 const PricingSection = () => {
   const [billingPeriod, setBillingPeriod] = useState("monthly");
 
+  const plans = [
+    {
+      name: "Basic",
+      price: billingPeriod === "monthly" ? "FREE" : "FREE",
+      priceSubtext: "/ FOREVER",
+      features: [
+        "Components-driven system",
+        "Sales-boosting landing pages",
+        "Awesome Feather icons pack",
+        "Themed into 3 different styles",
+      ],
+      buttonText: "Try for free",
+      buttonClass: "border border-primary text-primary hover:bg-purple-50 py-3",
+    },
+    {
+      name: "Pro",
+      price: billingPeriod === "monthly" ? "$49" : "$490",
+      priceSubtext: "/ MONTH",
+      features: [
+        "Components-driven system",
+        "Sales-boosting landing pages",
+        "Awesome Feather icons pack",
+        "Themed into 3 different styles",
+        "Will help to learn Figma",
+      ],
+      buttonText: "Regular license",
+      buttonClass: "bg-primary text-white hover:bg-primary/80 py-3",
+      featured: true,
+    },
+    {
+      name: "Enterprise",
+      price: billingPeriod === "monthly" ? "$12" : "$120",
+      priceSubtext: "/ EDITOR",
+      features: [
+        "Components-driven system",
+        "Sales-boosting landing pages",
+        "Awesome Feather icons pack",
+        "Themed into 3 different styles",
+      ],
+      buttonText: "Extended license",
+      buttonClass: "border border-primary text-primary hover:bg-purple-50 py-3",
+    },
+  ];
+
   return (
-    <section className="max-w-4xl mx-auto my-16 px-4">
-      <h2 className="text-4xl font-bold text-center mb-4">
-        Affordable pricing
-      </h2>
-
-      <div className="flex justify-center items-center mb-8">
-        <span className="text-gray-500 mr-2">Bill me</span>
-        <button
-          className={`px-3 py-1 rounded-full ${
-            billingPeriod === "monthly"
-              ? "bg-purple-600 text-white"
-              : "text-gray-500"
-          }`}
-          onClick={() => setBillingPeriod("monthly")}
-        >
-          monthly
-        </button>
-        <span className="text-gray-500 mx-2">•</span>
-        <button
-          className={`px-3 py-1 rounded-full ${
-            billingPeriod === "yearly"
-              ? "bg-purple-600 text-white"
-              : "text-gray-500"
-          }`}
-          onClick={() => setBillingPeriod("yearly")}
-        >
-          yearly
-        </button>
+    <section className="w-full max-w-7xl mx-auto my-16 px-4 relative">
+      <div className="flex justify-center mb-8 items-center">
+        <span className="text-gray-400 text-2xl font-semibold">Bill me</span>
+        <div className="relative inline-flex items-center">
+          <button
+            className={`px-2 py-2 text-2xl  ${
+              billingPeriod === "monthly"
+                ? "text-primary font-bold"
+                : "text-gray-400 font-semibold"
+            }`}
+            onClick={() => setBillingPeriod("monthly")}
+          >
+            monthly
+          </button>
+          <span className="text-gray-400 text-xl font-bold">•</span>
+          <button
+            className={`px-2 py-2 text-2xl  ${
+              billingPeriod === "yearly"
+                ? "text-primary font-bold"
+                : "text-gray-400 font-semibold"
+            }`}
+            onClick={() => setBillingPeriod("yearly")}
+          >
+            yearly
+          </button>
+          <div
+            className={`absolute h-[12px] w-[100px] bg-yellow-300 rounded-full transition-all duration-300 ease-in-out bottom-[10px] -z-10 ${
+              billingPeriod === "yearly" ? "left-[120px] w-[75px]" : "left-2"
+            }`}
+          />
+        </div>
       </div>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
+        {plans.map((plan, index) => (
+          <div
+            key={plan.name}
+            className={`relative bg-white rounded-2xl p-8  ${
+              plan.featured ? "shadow-lg z" : ""
+            }`}
+          >
+            {plan.featured && (
+              <div className="absolute -bottom-5 -left-5 -z-10">
+                <BackgroundSVG />
+              </div>
+            )}
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-        {/* Free Plan */}
-        <div className="border rounded-lg p-6 relative">
-          <span className="text-purple-600 font-semibold">Starter</span>
-          <h3 className="text-3xl font-bold mt-2">Free</h3>
-          <span className="text-gray-500 text-sm">/ FOREVER</span>
-          <ul className="mt-6 space-y-3">
-            <li className="flex items-center">
-              <svg
-                className="w-5 h-5 mr-2 text-gray-400"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                  clipRule="evenodd"
-                />
-              </svg>
-              Components-driven system
-            </li>
-            <li className="flex items-center">
-              <svg
-                className="w-5 h-5 mr-2 text-gray-400"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                  clipRule="evenodd"
-                />
-              </svg>
-              Sales-boosting landing pages
-            </li>
-            <li className="flex items-center">
-              <svg
-                className="w-5 h-5 mr-2 text-gray-400"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                  clipRule="evenodd"
-                />
-              </svg>
-              Awesome Feather icons pack
-            </li>
-          </ul>
-          <button className="mt-8 w-full py-2 px-4 border border-purple-600 text-purple-600 rounded-full hover:bg-purple-50 transition-colors">
-            Try for free
-          </button>
-        </div>
-
-        {/* Individual Plan */}
-        <div className="border rounded-lg p-6 relative bg-white shadow-lg">
-          <span className="text-purple-600 font-semibold">Individual</span>
-          <div className="absolute top-4 right-4 bg-gray-100 text-xs font-bold px-2 py-1 rounded-full">
-            BEST!
+            <span className="text-primary font-semibold">{plan.name}</span>
+            <h3 className="text-3xl font-bold mt-2">{plan.price}</h3>
+            {plan.priceSubtext && (
+              <span className="text-gray-500 text-sm">{plan.priceSubtext}</span>
+            )}
+            <ul className="mt-6 space-y-3">
+              {plan.features.map((feature, featureIndex) => (
+                <li key={featureIndex} className="flex items-center">
+                  <TickIcon
+                    size={24}
+                    className="mr-2"
+                    circleColor={
+                      index === 0
+                        ? "#D3D3D3"
+                        : index === 1
+                        ? "#FDCB6E"
+                        : "#AEF8E3"
+                    }
+                  />
+                  {feature}
+                </li>
+              ))}
+            </ul>
+            <button
+              className={`mt-8 w-full py-2 px-4 rounded-lg transition-colors ${plan.buttonClass}`}
+            >
+              {plan.buttonText}
+            </button>
           </div>
-          <h3 className="text-3xl font-bold mt-2">$24</h3>
-          <span className="text-gray-500 text-sm">/ MONTH</span>
-          <ul className="mt-6 space-y-3">
-            <li className="flex items-center">
-              <svg
-                className="w-5 h-5 mr-2 text-yellow-400"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                  clipRule="evenodd"
-                />
-              </svg>
-              Components-driven system
-            </li>
-            <li className="flex items-center">
-              <svg
-                className="w-5 h-5 mr-2 text-yellow-400"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                  clipRule="evenodd"
-                />
-              </svg>
-              Sales-boosting landing pages
-            </li>
-            <li className="flex items-center">
-              <svg
-                className="w-5 h-5 mr-2 text-yellow-400"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                  clipRule="evenodd"
-                />
-              </svg>
-              Awesome Feather icons pack
-            </li>
-            <li className="flex items-center">
-              <svg
-                className="w-5 h-5 mr-2 text-yellow-400"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                  clipRule="evenodd"
-                />
-              </svg>
-              Themed into 3 different styles
-            </li>
-            <li className="flex items-center">
-              <svg
-                className="w-5 h-5 mr-2 text-yellow-400"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                  clipRule="evenodd"
-                />
-              </svg>
-              Will help to learn Figma
-            </li>
-          </ul>
-          <button className="mt-8 w-full py-2 px-4 bg-purple-600 text-white rounded-full hover:bg-purple-700 transition-colors">
-            Regular license
-          </button>
-        </div>
-
-        {/* Corporate Plan */}
-        <div className="border rounded-lg p-6 relative">
-          <span className="text-purple-600 font-semibold">Corporate</span>
-          <h3 className="text-3xl font-bold mt-2">$12</h3>
-          <span className="text-gray-500 text-sm">/ EDITOR</span>
-          <ul className="mt-6 space-y-3">
-            <li className="flex items-center">
-              <svg
-                className="w-5 h-5 mr-2 text-teal-400"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                  clipRule="evenodd"
-                />
-              </svg>
-              Components-driven system
-            </li>
-            <li className="flex items-center">
-              <svg
-                className="w-5 h-5 mr-2 text-teal-400"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                  clipRule="evenodd"
-                />
-              </svg>
-              Sales-boosting landing pages
-            </li>
-            <li className="flex items-center">
-              <svg
-                className="w-5 h-5 mr-2 text-teal-400"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                  clipRule="evenodd"
-                />
-              </svg>
-              Awesome Feather icons pack
-            </li>
-            <li className="flex items-center">
-              <svg
-                className="w-5 h-5 mr-2 text-teal-400"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                  clipRule="evenodd"
-                />
-              </svg>
-              Themed into 3 different styles
-            </li>
-          </ul>
-          <button className="mt-8 w-full py-2 px-4 border border-purple-600 text-purple-600 rounded-full hover:bg-purple-50 transition-colors">
-            Extended license
-          </button>
-        </div>
+        ))}
       </div>
     </section>
   );
