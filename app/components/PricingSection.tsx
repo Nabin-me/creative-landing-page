@@ -1,6 +1,5 @@
 "use client";
 import React, { useState } from "react";
-import { CircleCheck } from "lucide-react";
 import { BackgroundSVG } from "./svg/backgrounds/BackgroundSVG";
 import { TickIcon } from "./svg/icons/TickIcon";
 

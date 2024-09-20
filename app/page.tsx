@@ -1,6 +1,3 @@
-import Image from "next/image";
-import Link from "next/link";
-
 // Import components (to be created separately)
 import PricingSection from "./components/PricingSection";
 import FeatureSection from "./components/FeatureSection";

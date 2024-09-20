@@ -86,9 +86,9 @@ const FeatureSection = () => {
         Delivering good designs since 1954 🚚💨
       </h2>
       <p className="text-gray-600 text-xl mb-12 ">
-        We're the first multi-purpose design kit solutions for businesses. We
-        help you bridge gaps between your layouts, templates and developers to
-        empower all involved.
+        We&apos;re the first multi-purpose design kit solutions for businesses.
+        We help you bridge gaps between your layouts, templates and developers
+        to empower all involved.
       </p>
 
       <div className="grid grid-cols-1 md:grid-cols-2 mt-10 lg:grid-cols-4 gap-8">
