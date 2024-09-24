@@ -52,6 +52,9 @@ const PricingSection = () => {
 
   return (
     <section className="w-full max-w-7xl mx-auto my-16 px-4 relative">
+      <div className="text-center text-6xl font-black tracking-tight mb-2">
+        Affordable pricing
+      </div>
       <div className="flex justify-center mb-8 items-center">
         <span className="text-gray-400 text-2xl font-semibold">Bill me</span>
         <div className="relative inline-flex items-center">

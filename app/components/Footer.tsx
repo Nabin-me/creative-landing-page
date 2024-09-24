@@ -22,17 +22,29 @@ const Footer = () => {
                 FOLLOW US
               </h4>
               <div className="flex space-x-4">
-                <a href="#" className="bg-yellow-100 p-2 rounded-full">
-                  <Facebook className="w-5 h-5 hover:text-yellow-500 text-gray-500" />
+                <a
+                  href="#"
+                  className="bg-gray-100 hover:bg-yellow-100 p-2 rounded-full"
+                >
+                  <Facebook className="w-5 h-5  text-gray-500" />
                 </a>
-                <a href="#" className="bg-gray-100 p-2 rounded-full">
-                  <Linkedin className="w-5 h-5 hover:text-yellow-500 text-gray-500" />
+                <a
+                  href="#"
+                  className="bg-gray-100 hover:bg-yellow-100 p-2 rounded-full"
+                >
+                  <Linkedin className="w-5 h-5  text-gray-500" />
                 </a>
-                <a href="#" className="bg-gray-100 p-2 rounded-full">
-                  <Dribbble className="w-5 h-5 hover:text-yellow-500 text-gray-500" />
+                <a
+                  href="#"
+                  className="bg-gray-100 hover:bg-yellow-100 p-2 rounded-full"
+                >
+                  <Dribbble className="w-5 h-5  text-gray-500" />
                 </a>
-                <a href="#" className="bg-gray-100 p-2 rounded-full">
-                  <Twitter className="w-5 h-5 hover:text-yellow-500 text-gray-500" />
+                <a
+                  href="#"
+                  className="bg-gray-100 hover:bg-yellow-100 p-2 rounded-full"
+                >
+                  <Twitter className="w-5 h-5 text-gray-500" />
                 </a>
               </div>
             </div>

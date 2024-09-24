@@ -19,6 +19,7 @@ const config = {
         primaryHover: "#A29BFE",
         secondary: "#FDCB6E",
         tertiary: "#2D3436",
+        accent: "#55EFC4",
       },
     },
   },
