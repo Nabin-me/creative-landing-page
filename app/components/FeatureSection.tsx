@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { PhoneCall, ChartPie, Zap, ThumbsUp } from "lucide-react";
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 
 interface FeatureCardProps {
   icon: React.ComponentType<{ className?: string }>;
