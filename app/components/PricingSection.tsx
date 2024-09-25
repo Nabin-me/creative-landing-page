@@ -52,7 +52,7 @@ const PricingSection = () => {
 
   return (
     <section className="w-full max-w-7xl mx-auto my-16 px-4 relative">
-      <div className="text-center text-6xl font-black tracking-tight mb-2">
+      <div className="text-center text-5xl md:text-6xl font-black tracking-tight mb-2">
         Affordable pricing
       </div>
       <div className="flex justify-center mb-8 items-center">
@@ -100,11 +100,22 @@ const PricingSection = () => {
               </div>
             )}
 
-            <span className="text-primary font-semibold">{plan.name}</span>
-            <h3 className="text-3xl font-bold mt-2">{plan.price}</h3>
+            <div className="flex justify-between">
+              <span className="text-primary font-semibold block">
+                {plan.name}
+              </span>
+              {plan.featured && (
+                <span className="border border-1 border-primary uppercase text text-xs font-semibold px-2 py-1 rounded-full">
+                  Best!
+                </span>
+              )}
+            </div>
+
+            <h3 className="text-3xl font-bold inline-block">{plan.price}</h3>
             {plan.priceSubtext && (
-              <span className="text-gray-500 text-sm">{plan.priceSubtext}</span>
+              <span className="text-sm">{plan.priceSubtext}</span>
             )}
+
             <ul className="mt-6 space-y-3">
               {plan.features.map((feature, featureIndex) => (
                 <li key={featureIndex} className="flex items-center">

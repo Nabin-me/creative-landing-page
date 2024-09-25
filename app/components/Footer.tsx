@@ -13,7 +13,7 @@ import { FooterSVG } from "./svg/backgrounds/FooterSVG";
 const Footer = () => {
   return (
     <footer className="bg-white  relative">
-      <div className="max-w-6xl mx-auto px-4 pb-24">
+      <div className="max-w-6xl mx-auto px-6 pb-5 lg:px-0 lg:pb-24">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 ">
           {/* Left Column */}
           <div>
@@ -135,7 +135,11 @@ const Footer = () => {
           </div>
         </div>
       </div>
-
+      <div className="flex justify-center text-center mb-5">
+        <span className="text-gray-400 text-sm ">
+          Copyright © 2024 <br /> Site Developed by Nabin 😀
+        </span>
+      </div>
       {/* Wave decoration */}
       <div className="absolute -bottom-35 left-0 right-0 overflow-hidden hidden md:block">
         <FooterSVG />

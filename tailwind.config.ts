@@ -14,6 +14,9 @@ const config = {
       fontFamily: {
         sans: ['var(--font-inter)'],
       },
+      transitionTimingFunction:{
+        "custom" :'cubic-bezier(.76,-0.01,.22,1)'
+      },
       colors: {
         primary: "#6C5CE7",
         primaryHover: "#A29BFE",

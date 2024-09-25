@@ -78,7 +78,7 @@ const FeatureSection = () => {
   ];
 
   return (
-    <section className="max-w-6xl mx-auto my-5 px-4">
+    <section className="max-w-6xl mx-auto my-5 px-6">
       <h2 className="text-3xl font-bold mb-10">
         Delivering good designs since 1954 🚚💨
       </h2>
